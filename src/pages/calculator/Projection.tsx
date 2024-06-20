@@ -19,8 +19,7 @@ function Projection({annualEmissions, targetYear, actions}: ProjectionProps) {
 
         actions.forEach(action => {
             if (year >= action.startYear) {
-                const yearsOfReduction = year - action.startYear + 1;
-                emissions -= action.reduction * yearsOfReduction;
+                emissions -= action.reduction;
                 cost += action.cost;
             }
         });
